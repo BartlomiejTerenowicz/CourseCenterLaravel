@@ -6,6 +6,7 @@ use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateVideoRequest;
 use App\Video;
 
 class VideosController extends Controller
@@ -40,10 +41,9 @@ class VideosController extends Controller
     /**
      * [store description]
      */
-    public function store()
+    public function store(CreateVideoRequest $request)
     {
-        $input = Request::all();
-        Video::create($input);
+        Video::create($request->all());
         return redirect('videos');
     }
 }
