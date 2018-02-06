@@ -14,10 +14,6 @@
 Route::get('/contact', "PagesController2@contact");
 Route::get('/about', 'PagesController2@about');
 /* Video actions*/
-Route::post('/videos','VideosController@store');
-Route::get('/videos','VideosController@index');
-Route::get('/videos/create','VideosController@create');
-Route::get('/videos/{id}','VideosController@show');
 /*
 / funkcja anonimowa
  */
@@ -28,6 +24,12 @@ Route::get('/videos/{id}','VideosController@show');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['web']], function () {
+    Route::post('/videos','VideosController@store');
+    Route::get('/videos','VideosController@index');
+    Route::get('/videos/create','VideosController@create');
+    Route::get('/videos/{id}','VideosController@show');
+});
 
 Auth::routes();
 
