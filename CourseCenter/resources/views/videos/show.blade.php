@@ -19,9 +19,9 @@
                 <div class="categories">
                     <h4>Kategorie</h4>
                     <span>
-                    <a href="">Webdesign</a>,&nbsp;
-                    <a href="">PHP</a>,&nbsp;
-                    <a href="">Angular</a>
+                    @foreach($video->categories as $category)
+                        {{ $category->name}}
+                    @endforeach
                     </span>
                 </div>
                 <h4>Pełny opis</h4>
@@ -61,16 +61,13 @@
                 <h4>Popularne kategorie</h4>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <h5>Webdesign</h5>
-                        <span>234 filmów</span>
+                        <h5>Blender</h5>
                     </li>
                     <li class="list-group-item">
-                        <h5>JavaScript</h5>
-                        <span>87 filmów</span>
+                        <h5>Gimp</h5>
                     </li>
                     <li class="list-group-item">
-                        <h5>Laravel</h5>
-                        <span>56 filmów</span>
+                        <h5>Inscape</h5>
                     </li>
                 </ul>
             </div>
@@ -79,21 +76,7 @@
         <!-- pojedynczy box -->
         <div class="card">
             <div class="right-col-box">
-                <h4>Statystyki</h4>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">1342</span>Filmów
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">18</span>Kategorii
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">7800</span>Użytkowników
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">832</span>Komentarzy
-                    </li>
-                </ul>
+                
             </div>
         </div>
 

@@ -1,7 +1,14 @@
 @extends('master')
 @section('content')
-<!--<h2>{$header}}</h2>-->
-<h2>{{$var1}}</h2>
-<h3>{{$var2}}</h3>
-<h4>{{$var3}}</h4>
+    <p>
+        Chcesz poznać najnowsze tajniki grafiki komputerowej? <br />
+        Masz dość ocierania się o powierzchnię i chcesz dogłębnie zrozumieć dane zagadnienie?<br />
+        Poszukujesz wiarygodnego źródła wiedzy?<br />
+    </p>
+    <p>
+        Dołącz do nas! CourseCenter jest portalem pomagającym w osiągnięciu tego celu! <br />
+    </p>
+    <p>
+        Strona stanowi pracę zaliczeniową PAI nie jest przeznaczona do działań komercyjnych.
+    </p>
 @stop

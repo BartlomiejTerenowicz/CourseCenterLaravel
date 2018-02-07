@@ -20,4 +20,14 @@ class PagesController2 extends Controller
         $var3 = 12.34;
         return view('pages.about',compact('var1','var2','var3'));
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('pages.home');
+    }
 }

@@ -8,9 +8,16 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateVideoRequest;
 use App\Video;
+use App\Category;
+use Auth;
 
 class VideosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except' => 'index']);
+    }
+
     /**
      * Get videos from databases
      * @return Video - list of videos
@@ -35,7 +42,8 @@ class VideosController extends Controller
      */
     public function create()
     {
-        return view('videos.create');
+        $categories = Category::pluck('name','id')->all();
+        return view('videos.create')->with('categories',$categories);
     }
 
     /**
@@ -43,7 +51,10 @@ class VideosController extends Controller
      */
     public function store(CreateVideoRequest $request)
     {
-        Video::create($request->all());
+        $video = new Video($request->all());
+        Auth::user()->videos()->save($video);
+        $categoryIdentity = $request->input('CategoryList');
+        $video->categories()->attach($categoryIdentity);
         return redirect('videos');
     }
 
@@ -53,8 +64,9 @@ class VideosController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::pluck('name','id')->all();
         $video = Video::findOrFail($id);
-        return view('videos.edit')->with('video',$video);
+        return view('videos.edit',compact('video','categories'));
     }
 
     /**
@@ -65,6 +77,7 @@ class VideosController extends Controller
     {
         $video = Video::findOrFail($id);
         $video->update($request->all());
-        return redirect('videos.index');
+        $video->categories()->sync($request->input('CategoryListB'));
+        return redirect('videos');
     }
 }

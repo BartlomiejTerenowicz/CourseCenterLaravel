@@ -11,10 +11,18 @@ class Video extends Model
     protected $fillable = [
         'title',
         'url',
-        'description',
-        'user_id'
+        'description'
     ];
     // Table ^
+
+    /**
+     * List id categories
+     */
+     public function getCategoryListBAttribute()
+     {
+         return $this->categories->pluck('id')->all();
+     }
+
     //
 
     /**
@@ -23,5 +31,13 @@ class Video extends Model
     public function user()
     {
         return $this->belongsTo('App\User');  // this course belongs to User
+    }
+
+    /**
+     * Video n-m Category
+     */
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category')->withTimestamps();
     }
 }

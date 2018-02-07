@@ -7,7 +7,14 @@
         {!! Form::text('title',null,['class'=>'form-control']) !!}
     </div>
 </div>
-
+<div class="form-group">
+    <div class="col-md-4 control-label">
+        {!! Form::label('CategoryListB','Kategoria:') !!}
+    </div>
+    <div class="col-md-6">
+        {!! Form::select('CategoryListB[]',$categories,null,['class'=>'form-control','multiple']) !!}
+    </div>
+</div>
 <div class="form-group">
     <div class="col-md-4 control-label">
         {!! Form::label('description','Opis:') !!}
