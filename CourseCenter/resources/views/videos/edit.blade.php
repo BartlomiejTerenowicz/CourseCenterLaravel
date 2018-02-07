@@ -5,8 +5,8 @@
         <div class="card">
             <div class="panel-body">
             <!-- Formularz -->
-                    {!! Form::open(['url'=>'videos','class'=>'form-horizontal']) !!}
-            		@include('videos.form',['buttonText' =>'Dodaj kurs'])
+                    {!! Form::model($video,['method'=>'PATCH','class'=>'form-horizontal','action'=>['VideosController@update', $video->id]]) !!}
+            		@include('videos.form',['buttonText'=>'Zapisz zmiane'])
                     {!! Form::close() !!}
                     @include('videos.errors_form')
             </div>

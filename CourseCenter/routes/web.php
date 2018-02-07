@@ -25,10 +25,11 @@ Route::get('/about', 'PagesController2@about');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['web']], function () {
-    Route::post('/videos','VideosController@store');
+    /*Route::post('/videos','VideosController@store');
     Route::get('/videos','VideosController@index');
     Route::get('/videos/create','VideosController@create');
-    Route::get('/videos/{id}','VideosController@show');
+    Route::get('/videos/{id}','VideosController@show');*/
+    Route::resource('videos','VideosController');
 });
 
 Auth::routes();

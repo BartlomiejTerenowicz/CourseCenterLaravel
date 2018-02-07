@@ -46,4 +46,25 @@ class VideosController extends Controller
         Video::create($request->all());
         return redirect('videos');
     }
+
+    /**
+     * Form for edit videos
+     * @return [type] [description]
+     */
+    public function edit($id)
+    {
+        $video = Video::findOrFail($id);
+        return view('videos.edit')->with('video',$video);
+    }
+
+    /**
+     * Update video
+     * @return [type] [description]
+     */
+    public function update($id, CreateVideoRequest $request)
+    {
+        $video = Video::findOrFail($id);
+        $video->update($request->all());
+        return redirect('videos.index');
+    }
 }

@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User is a author of many Videos
+     */
+    public function videos()
+    {
+        return $this->hasMany('App\User');
+    }
 }
