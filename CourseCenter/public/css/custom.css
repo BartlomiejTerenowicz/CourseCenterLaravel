@@ -26,7 +26,7 @@ body {
 .btn-primary:active,
 .btn-primary:focus {
 	border-radius: 0;
-	background-color: #4CAF50 !important;
+	background-color: #2E8B57 !important;
 	border: none !important;
 	outline: none !important;
 	box-shadow: none !important;
@@ -42,7 +42,7 @@ a, .btn-link {
 
 /* Top navbar */
 .navbar-default {
-	background-color: #3F51B5;
+	background-color: #4682B4;
 	border: none;
 	box-shadow: 0px 0px 7px 0px #777;
 	border-radius: 0;
@@ -81,7 +81,7 @@ a, .btn-link {
 }
 
  .single-video {
-    min-height: 360px;
+    min-height: 280px;
     margin-bottom: 50px;
 }
 
@@ -228,7 +228,7 @@ a, .btn-link {
 
 /* Stopka */
 .site-footer {
-	background-color: #3F51B5;
+	background-color: #4682B4;
 	height: 80px;
     /*position: fixed;
     bottom: 0;

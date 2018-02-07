@@ -12,11 +12,12 @@
 */
 Route::get('/', 'PagesController2@index');
 Route::get('/contact', "PagesController2@contact");
+Route::get('/create',"VideosController@create");;
 Route::get('/about', 'PagesController2@about');
 Route::get('/home', 'PagesController2@index');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-
 Route::post('/register', 'Auth\RegisterController@register');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 /* Video actions*/
 /*
 / funkcja anonimowa

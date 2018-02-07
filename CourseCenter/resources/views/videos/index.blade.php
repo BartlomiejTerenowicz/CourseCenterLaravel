@@ -3,6 +3,9 @@
     <div class="videos-header card">
         <h2>Najnowsze kursy</h2>
     </div>
+    @if(auth()->check())
+            <a href="/create" class="btn btn-primary">Dodaj kurs</a>
+    @endif
     <div class="row">
 
         @foreach($videos as $video)

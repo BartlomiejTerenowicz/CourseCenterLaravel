@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Artykuły</title>
-
+    <title>CourseCenter</title>
+    <!-- PAI - projekt zaliczeniowy -->
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
@@ -45,18 +45,27 @@
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
+                <!-- Left Side Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="">Start</a></li>
-                    <li><a href="/videos">Kursy</a></li>
+                    <li><a href="/">Start</a></li>
                     <li><a href="/contact">Kontakt</a></li>
                     <li><a href="/about">O nas</a></li>
                 </ul>
 
-                <!-- Right Side Of Navbar -->
+                <!-- Right Side Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                        <li><a href="/login">Zaloguj</a></li>
+                        @if(auth()->check())
+                            <li>
+                                <a href="/">Witaj {{ Auth::user()->name }} !</a>
+                            </li>
+                        @endif
+                        <li><a href="/videos">Kursy</a></li>
+                        @if(auth()->check())
+                            <li><a href="/logout">Wyloguj</a></li>
+                        @else
+                            <li><a href="/login">Logowanie</a></li>
+                        @endif
                         <li><a href="/register">Rejestracja</a></li>
                 </ul>
             </div>

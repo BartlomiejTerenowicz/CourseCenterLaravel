@@ -9,6 +9,6 @@
         Dołącz do nas! CourseCenter jest portalem pomagającym w osiągnięciu tego celu! <br />
     </p>
     <p>
-        Strona stanowi pracę zaliczeniową PAI nie jest przeznaczona do działań komercyjnych.
+        Strona stanowi pracę zaliczeniową PAI i nie jest przeznaczona do działań komercyjnych.
     </p>
 @stop
